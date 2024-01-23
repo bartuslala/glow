@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Główna</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 20px;
+            background: linear-gradient(to right, #FFC0CB, #FFD700); /* Gradient background */
+        }
+
+        h1 {
+            color: #cc0066;
+        }
+
+        .calendar {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+            gap: 10px;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        button {
+            font-size: 16px;
+            padding: 10px 20px;
+            background: linear-gradient(to right, #cc0066, #ff66b2); /* Gradient button background */
+            border: none;
+            color: white;
+            border-radius: 5px;
+            transition: background 0.3s ease;
+        }
+
+        button:hover {
+            background: linear-gradient(to right, #ff66b2, #cc0066); /* Gradient button background on hover */
+        }
+
+        #content {
+            margin-top: 20px;
+        }
+
+        .back-to-home {
+            display: inline-block;
+            padding: 10px 20px;
+            background: #cc0066;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background 0.3s ease;
+        }
+
+        .back-to-home:hover {
+            background: #ff66b2;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>1 TP 2023/24 Bartek Lalik</h1>
+
+    <div class="calendar">
+        <a href="poczotk.html"><button>Strona Początkowa<br>21.09.2023</button></a>
+        <a href="mapka.html"><button>Mapa Odsyłaczy<br>03.10.2023</button></a>
+        <a href="formularz.html"><button>Formularz<br>12.10.2023</button></a>
+        <a href="multi.html"><button>Multimedia<br>06.11.2023</button></a>
+        <a href="kalendarz.html"><button>Kalendarz Adwentowy<br>16.11.2023</button></a>
+        <a href="https://bartuslala.github.io/osob/"><button>O Mnie<br>05.12.2023</button></a>
+    </div>
+
+    <div id="content"></div>
+
+    <script>
+        function showContent(day) {
+            const contentData = {
+                '1': '<a href="poczotk.html">p</a>',
+                '2': '<a href="mapka.html">m</a>',
+                '3': '<a href="formularz.html">f</a>',
+                '4': '<a href="multi.html">mu</a>',
+                '5': '<a href="kalendarz.html">k</a>',
+                '6': '<a href="https://bartuslala.github.io/osob/">o</a>',
+            };
+
+            const contentDiv = document.getElementById('content');
+            contentDiv.innerHTML = contentData[day];
+        }
+    </script>
+
+</body>
+
+</html>
